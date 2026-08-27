@@ -14,22 +14,12 @@ const blog = (await getCollection('blog'))
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <div class="space-y-12 sm:space-y-14">
-      <!-- Header Intro (Emil Kowalski style) -->
-      <section class="animate space-y-1">
-        <h1 class="text-[17px] font-medium text-zinc-900 dark:text-zinc-100 tracking-[-0.01em]">
+      <!-- Hero Section -->
+      <section class="animate space-y-2.5">
+        <h1 class="font-serif text-3xl sm:text-4xl text-zinc-900 dark:text-zinc-100 font-normal tracking-tight">
           {SITE.NAME}
         </h1>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-normal">
-          AI-разработка, архитектура и веб-интерфейсы
-        </p>
-      </section>
-
-      <!-- About Section -->
-      <section class="animate space-y-3">
-        <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
-          О проекте
-        </h2>
-        <p class="text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400 font-normal">
+        <p class="text-[15px] sm:text-base leading-relaxed text-zinc-500 dark:text-zinc-400 font-normal">
           Блог о практическом применении AI-агентов в кодовой базе, системном дизайне, инструментах разработчика и создании быстрых минималистичных веб-приложений.
         </p>
       </section>

@@ -11,7 +11,8 @@ export default {
       fontFamily: {
         sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", ...defaultTheme.fontFamily.sans],
         mono: ["JetBrains Mono", "Fira Code", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", ...defaultTheme.fontFamily.mono],
-        serif: ["Lora", ...defaultTheme.fontFamily.serif],
+        serif: ["'EB Garamond'", "Lora", ...defaultTheme.fontFamily.serif],
+        garamond: ["'EB Garamond'", "Georgia", "serif", ...defaultTheme.fontFamily.serif],
       },
     },
   },
