@@ -189,7 +189,7 @@ Before writing code, inspect existing patterns, types, and reusable components.
 Для сложных реальных проектов (Next.js + Sanity + AI-поиск + авторизация) требуется более развернутый свод правил.
 
 Вы можете скачать и изучить полный production-файл:  
-👉 **[Скачать полный файл AGENTS.md](/user-files/agents-md/AGENTS.md)** _(локальный путь: [`public/user-files/agents-md/AGENTS.md`](file:///D:/git/Personal/stuffcheck/public/user-files/agents-md/AGENTS.md))_.
+👉 **[Скачать полный файл AGENTS.md](/user-files/agents-md/AGENTS.md)**
 
 ---
 
