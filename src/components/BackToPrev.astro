@@ -1,23 +1,22 @@
 ---
 type Props = {
   href: string;
-}
+};
 
 const { href } = Astro.props;
 ---
- 
-<a 
-  href={href} 
-  class="group inline-flex items-center gap-1.5 text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
+
+<a
+  href={href}
+  class="group inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
 >
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    class="size-4 stroke-2 fill-none stroke-current transition-transform duration-150 group-hover:-translate-x-1"
+    class="size-4 fill-none stroke-current stroke-2 transition-transform duration-150 group-hover:-translate-x-1"
   >
     <line x1="19" y1="12" x2="5" y2="12"></line>
     <polyline points="12 19 5 12 12 5"></polyline>
   </svg>
-  <span><slot/></span>
+  <span><slot /></span>
 </a>
-

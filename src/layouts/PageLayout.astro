@@ -19,11 +19,11 @@ const { title, description } = Astro.props;
   <body class="relative min-h-screen">
     <!-- Ambient top glow -->
     <div
-      class="fixed inset-x-0 top-0 h-[280px] sm:h-[340px] pointer-events-none -z-10"
+      class="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[280px] sm:h-[340px]"
       aria-hidden="true"
     >
       <div
-        class="absolute -top-[100px] sm:-top-[120px] left-1/2 -translate-x-1/2 w-[850px] sm:w-[1100px] h-[300px] sm:h-[360px] opacity-70 dark:opacity-20 blur-[80px] sm:blur-[100px] transform-gpu"
+        class="absolute -top-[100px] left-1/2 h-[300px] w-[850px] -translate-x-1/2 transform-gpu opacity-70 blur-[80px] dark:opacity-20 sm:-top-[120px] sm:h-[360px] sm:w-[1100px] sm:blur-[100px]"
         style="background: radial-gradient(circle at 18% 45%, rgba(244, 114, 182, 0.35) 0%, rgba(232, 121, 249, 0.25) 30%, transparent 65%), radial-gradient(circle at 50% 35%, rgba(56, 189, 248, 0.3) 0%, rgba(103, 232, 249, 0.3) 30%, transparent 45%), radial-gradient(circle at 82% 45%, rgba(52, 211, 153, 0.15) 0%, rgba(110, 231, 183, 0.15) 30%, transparent 15%);"
       >
       </div>

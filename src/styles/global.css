@@ -4,23 +4,23 @@
 
 @layer base {
   :root {
-    --bg-page: #ffffff;
-    --text-primary: #171717;
-    --text-secondary: #737373;
-    --text-muted: #a3a3a3;
-    --border-subtle: #e5e5e5;
-    --code-bg: #f8f9fa;
-    --code-text: #171717;
+    --bg-page: theme('colors.white');
+    --text-primary: theme('colors.zinc.900');
+    --text-secondary: theme('colors.zinc.500');
+    --text-muted: theme('colors.zinc.400');
+    --border-subtle: theme('colors.zinc.200');
+    --code-bg: theme('colors.zinc.100 / 60%');
+    --code-text: theme('colors.zinc.900');
   }
 
   .dark {
-    --bg-page: #0d0d0e;
-    --text-primary: #ededed;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
-    --border-subtle: #1f1f23;
-    --code-bg: #141416;
-    --code-text: #e6edf3;
+    --bg-page: theme('colors.zinc.950');
+    --text-primary: theme('colors.zinc.100');
+    --text-secondary: theme('colors.zinc.400');
+    --text-muted: theme('colors.zinc.500');
+    --border-subtle: theme('colors.zinc.800');
+    --code-bg: theme('colors.zinc.900 / 60%');
+    --code-text: theme('colors.zinc.100');
   }
 }
 
@@ -40,8 +40,8 @@ body {
 }
 
 body {
-  @apply font-sans antialiased text-zinc-700 dark:text-zinc-300;
-  @apply bg-[#ffffff] dark:bg-[#0d0d0e];
+  @apply font-sans text-zinc-700 antialiased dark:text-zinc-300;
+  @apply bg-white dark:bg-zinc-950;
   @apply flex flex-col;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -53,11 +53,11 @@ body {
 }
 
 main {
-  @apply flex-1 pt-16 sm:pt-24 pb-16;
+  @apply flex-1 pb-16 pt-16 sm:pt-24;
 }
 
 footer {
-  @apply py-8 text-sm text-zinc-400 dark:text-zinc-500 border-t border-zinc-100/80 dark:border-zinc-900/80 mt-auto;
+  @apply mt-auto border-t border-zinc-100/80 py-8 text-sm text-zinc-400 dark:border-zinc-900/80 dark:text-zinc-500;
 }
 
 /* ==========================================================================
@@ -65,7 +65,7 @@ footer {
    ========================================================================== */
 
 article {
-  @apply max-w-none text-[15.5px] sm:text-[16px] leading-[1.75] text-zinc-700 dark:text-zinc-300 font-normal;
+  @apply max-w-none text-[15.5px] font-normal leading-[1.75] text-zinc-700 dark:text-zinc-300 sm:text-[16px];
 }
 
 /* Headings Hierarchy */
@@ -80,32 +80,32 @@ article h6 {
 }
 
 article h1 {
-  @apply text-2xl sm:text-3xl font-semibold mt-10 mb-5 pb-3 border-b border-zinc-100 dark:border-zinc-800/80;
+  @apply mb-5 mt-10 border-b border-zinc-100 pb-3 text-2xl font-semibold dark:border-zinc-800/80 sm:text-3xl;
 }
 
 article h2 {
-  @apply text-xl sm:text-2xl font-semibold mt-10 mb-4;
+  @apply mb-4 mt-10 text-xl font-semibold sm:text-2xl;
 }
 
 article h3 {
-  @apply text-lg sm:text-xl font-medium mt-4 mb-3 text-zinc-900 dark:text-zinc-100;
+  @apply mb-3 mt-4 text-lg font-medium text-zinc-900 dark:text-zinc-100 sm:text-xl;
 }
 
 article h4 {
-  @apply text-base sm:text-lg font-medium mt-6 mb-2 text-zinc-900 dark:text-zinc-100;
+  @apply mb-2 mt-6 text-base font-medium text-zinc-900 dark:text-zinc-100 sm:text-lg;
 }
 
 article h5 {
-  @apply text-sm sm:text-base font-medium mt-5 mb-2 uppercase tracking-wider text-zinc-700 dark:text-zinc-300;
+  @apply mb-2 mt-5 text-sm font-medium uppercase tracking-wider text-zinc-700 dark:text-zinc-300 sm:text-base;
 }
 
 article h6 {
-  @apply text-xs sm:text-sm font-medium mt-4 mb-2 uppercase tracking-wider text-zinc-500 dark:text-zinc-400;
+  @apply mb-2 mt-4 text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400 sm:text-sm;
 }
 
 /* Paragraphs */
 article p {
-  @apply my-4 leading-[1.75] text-pretty;
+  @apply my-4 text-pretty leading-[1.75];
 }
 
 article p:first-child {
@@ -127,22 +127,22 @@ article i {
 /* Strikethrough */
 article del,
 article s {
-  @apply text-zinc-400 dark:text-zinc-500 line-through;
+  @apply text-zinc-400 line-through dark:text-zinc-500;
 }
 
 /* Links */
 article a {
   @apply text-zinc-900 dark:text-zinc-100;
-  @apply underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700;
+  @apply underline decoration-zinc-300 underline-offset-4 dark:decoration-zinc-700;
   @apply hover:decoration-zinc-900 dark:hover:decoration-zinc-100;
   @apply transition-colors duration-150 ease-in-out;
 }
 
 /* Blockquotes / Callouts */
 article blockquote {
-  @apply my-6 pl-8 py-1;
+  @apply my-6 py-1 pl-8;
   @apply border-l-2 border-zinc-300 dark:border-zinc-700;
-  @apply text-zinc-600 dark:text-zinc-400 font-normal;
+  @apply font-normal text-zinc-600 dark:text-zinc-400;
 }
 
 article blockquote p {
@@ -150,17 +150,17 @@ article blockquote p {
 }
 
 article blockquote strong {
-  @apply text-zinc-800 dark:text-zinc-200 font-medium;
+  @apply font-medium text-zinc-800 dark:text-zinc-200;
 }
 
 /* Lists */
 article ul {
-  @apply my-4 pl-8 list-disc space-y-1.5;
+  @apply my-4 list-disc space-y-1.5 pl-8;
   @apply marker:text-zinc-400 dark:marker:text-zinc-600;
 }
 
 article ol {
-  @apply my-4 pl-8 list-decimal space-y-1.5;
+  @apply my-4 list-decimal space-y-1.5 pl-8;
   @apply marker:font-mono marker:text-zinc-400 dark:marker:text-zinc-500;
 }
 
@@ -178,21 +178,21 @@ article li > p {
 }
 
 /* Task Lists (GitHub flavored Markdown checkboxes) */
-article ul:has(input[type="checkbox"]) {
-  @apply list-none pl-0 space-y-2;
+article ul:has(input[type='checkbox']) {
+  @apply list-none space-y-2 pl-0;
 }
 
-article li:has(input[type="checkbox"]) {
+article li:has(input[type='checkbox']) {
   @apply flex items-start gap-2.5 pl-0;
 }
 
-article input[type="checkbox"] {
-  @apply size-4 mt-1 rounded border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:bg-zinc-800 accent-zinc-800 dark:accent-zinc-200 cursor-pointer;
+article input[type='checkbox'] {
+  @apply mt-1 size-4 cursor-pointer rounded border-zinc-300 text-zinc-900 accent-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:accent-zinc-200;
 }
 
 /* Inline Code */
 article code:not(pre code) {
-  @apply font-mono text-[0.875em] font-normal px-1.5 py-0.5 rounded;
+  @apply rounded px-1.5 py-0.5 font-mono text-[0.875em] font-normal;
   @apply bg-zinc-100 dark:bg-zinc-800/70;
   @apply text-zinc-900 dark:text-zinc-100;
   @apply border border-zinc-200/60 dark:border-zinc-700/50;
@@ -207,15 +207,15 @@ article code::after {
 
 /* Fenced Code Blocks */
 article pre {
-  @apply my-6 rounded-lg overflow-x-auto;
-  @apply border border-zinc-200/70 dark:border-zinc-800/80;
-  @apply font-mono text-[13.5px] sm:text-[14px] leading-relaxed;
+  @apply my-6 overflow-x-auto rounded-lg;
+  @apply border border-zinc-200/80 dark:border-zinc-800;
+  @apply font-mono text-[13.5px] leading-relaxed sm:text-[14px];
   @apply p-4 sm:p-5;
-  @apply bg-[#f8f9fa] text-zinc-900;
+  @apply bg-zinc-100/60 text-zinc-900 dark:bg-zinc-900/60 dark:text-zinc-100;
 }
 
 article pre.astro-code {
-  background-color: #f8f9fa80 !important;
+  background-color: transparent !important;
 }
 
 article pre.astro-code span {
@@ -223,15 +223,11 @@ article pre.astro-code span {
 }
 
 .dark article pre {
-  @apply bg-[#141416] text-[#e6edf3] border-zinc-800/80;
-}
-
-.dark article pre.astro-code {
-  background-color: #141416 !important;
+  @apply border-zinc-800 bg-zinc-900/60 text-zinc-100;
 }
 
 .dark article pre.astro-code span {
-  color: var(--shiki-dark, #e6edf3) !important;
+  color: var(--shiki-dark, inherit) !important;
 }
 
 /* Custom Scrollbar for Code Blocks */
@@ -242,7 +238,7 @@ article pre::-webkit-scrollbar-track {
   background: transparent;
 }
 article pre::-webkit-scrollbar-thumb {
-  @apply bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400 dark:hover:bg-zinc-600 rounded-full;
+  @apply rounded-full bg-zinc-300 hover:bg-zinc-400 dark:bg-zinc-700 dark:hover:bg-zinc-600;
 }
 
 /* Horizontal Rules */
@@ -252,8 +248,8 @@ article hr {
 
 /* Tables */
 article table {
-  @apply w-full my-6 border-collapse text-left text-sm;
-  @apply rounded-lg overflow-hidden border border-zinc-200/80 dark:border-zinc-800/80;
+  @apply my-6 w-full border-collapse text-left text-sm;
+  @apply overflow-hidden rounded-lg border border-zinc-200/80 dark:border-zinc-800/80;
   display: table;
 }
 
@@ -263,11 +259,11 @@ article thead {
 }
 
 article th {
-  @apply px-3.5 py-2.5 font-medium text-zinc-900 dark:text-zinc-100 text-xs tracking-wider uppercase;
+  @apply px-3.5 py-2.5 text-xs font-medium uppercase tracking-wider text-zinc-900 dark:text-zinc-100;
 }
 
 article td {
-  @apply px-3.5 py-2.5 border-b border-zinc-100 dark:border-zinc-800/50 text-zinc-700 dark:text-zinc-300;
+  @apply border-b border-zinc-100 px-3.5 py-2.5 text-zinc-700 dark:border-zinc-800/50 dark:text-zinc-300;
 }
 
 article tbody tr:last-child td {
@@ -280,42 +276,42 @@ article tbody tr:hover {
 
 /* Keyboard / KBD */
 article kbd {
-  @apply font-mono text-xs font-medium px-1.5 py-0.5 rounded;
-  @apply bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200;
+  @apply rounded px-1.5 py-0.5 font-mono text-xs font-medium;
+  @apply bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200;
   @apply border border-zinc-300/80 dark:border-zinc-700;
 }
 
 /* Abbreviations */
 article abbr {
-  @apply cursor-help underline decoration-dotted decoration-zinc-400 dark:decoration-zinc-600 underline-offset-4;
+  @apply cursor-help underline decoration-zinc-400 decoration-dotted underline-offset-4 dark:decoration-zinc-600;
 }
 
 /* Highlights */
 article mark {
-  @apply bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-1 py-0.5 rounded;
+  @apply rounded bg-zinc-200 px-1 py-0.5 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100;
 }
 
 /* Images */
 article img {
-  @apply rounded-lg border border-zinc-200/60 dark:border-zinc-800/60 mx-auto my-6;
+  @apply mx-auto my-6 rounded-lg border border-zinc-200/60 dark:border-zinc-800/60;
   max-width: 100%;
   height: auto;
 }
 
 /* Animations */
 .animate {
-  @apply opacity-0 translate-y-2;
+  @apply translate-y-2 opacity-0;
   @apply transition-all duration-500 ease-out;
 }
 
 .animate.show {
-  @apply opacity-100 translate-y-0;
+  @apply translate-y-0 opacity-100;
 }
 
 html #back-to-top {
-  @apply opacity-0 pointer-events-none;
+  @apply pointer-events-none opacity-0;
 }
 
 html.scrolled #back-to-top {
-  @apply opacity-100 pointer-events-auto;
+  @apply pointer-events-auto opacity-100;
 }

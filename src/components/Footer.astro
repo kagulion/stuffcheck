@@ -7,11 +7,13 @@ import BackToTop from '@components/BackToTop.astro';
 <footer class="animate">
   <Container>
     <div class="relative">
-      <div class="absolute right-0 -top-16">
+      <div class="absolute -top-16 right-0">
         <BackToTop />
       </div>
     </div>
-    <div class="flex justify-between items-center text-xs sm:text-sm text-zinc-400 dark:text-zinc-500">
+    <div
+      class="flex items-center justify-between text-xs text-zinc-400 dark:text-zinc-500 sm:text-sm"
+    >
       <div>
         &copy; 2026 · {SITE.NAME}
       </div>
@@ -19,7 +21,7 @@ import BackToTop from '@components/BackToTop.astro';
         <button
           id="light-theme-button"
           aria-label="Light theme"
-          class="size-7 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+          class="flex size-7 items-center justify-center rounded-md text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800/50 dark:hover:text-zinc-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +48,7 @@ import BackToTop from '@components/BackToTop.astro';
         <button
           id="dark-theme-button"
           aria-label="Dark theme"
-          class="size-7 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+          class="flex size-7 items-center justify-center rounded-md text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800/50 dark:hover:text-zinc-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +67,7 @@ import BackToTop from '@components/BackToTop.astro';
         <button
           id="system-theme-button"
           aria-label="System theme"
-          class="size-7 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+          class="flex size-7 items-center justify-center rounded-md text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800/50 dark:hover:text-zinc-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,4 +89,3 @@ import BackToTop from '@components/BackToTop.astro';
     </div>
   </Container>
 </footer>
-

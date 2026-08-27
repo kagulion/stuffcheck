@@ -1,7 +1,7 @@
 ---
-title: "Blog Collection"
-description: "How to add posts to your blog."
-date: "Mar 21 2024"
+title: 'Blog Collection'
+description: 'How to add posts to your blog.'
+date: 'Mar 21 2024'
 draft: true
 ---
 
@@ -22,14 +22,13 @@ In the above example, two static pages will be generated, based on the existence
 - `https://example.com/blog/post-1`
 - `https://example.com/blog/post-2`
 
-
 All content must be preceded by required metadata in the markdown file in `yaml` format, and be enclosed by triple dashes. --- ---
 
 ```mdx
 ---
-title: "My cool new title"
-description: "A description of my content."
-date: "Mar 22 2024"
+title: 'My cool new title'
+description: 'A description of my content.'
+date: 'Mar 22 2024'
 draft: false
 ---
 ```
@@ -47,9 +46,9 @@ All that's left to do is write your content under the metadata.
 
 ```mdx
 ---
-title: "My cool new title"
-description: "A description of my content."
-date: "Mar 22 2024"
+title: 'My cool new title'
+description: 'A description of my content.'
+date: 'Mar 22 2024'
 draft: false
 ---
 

@@ -29,23 +29,23 @@ const { Content } = await post.render();
       <BackToPrev href="/blog"> Все статьи </BackToPrev>
     </div>
     <div
-      class="space-y-3 pb-8 mb-8 border-b border-zinc-100 dark:border-zinc-800/60"
+      class="mb-8 space-y-3 border-b border-zinc-100 pb-8 dark:border-zinc-800/60"
     >
       <div
-        class="animate flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 font-normal"
+        class="animate flex items-center gap-2 text-xs font-normal text-zinc-400 dark:text-zinc-500"
       >
         <FormattedDate date={post.data.date} />
         <span>·</span>
         <span>{readingTime(post.body)}</span>
       </div>
       <h1
-        class="animate text-2xl sm:text-3xl font-semibold font-serif tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 leading-snug"
+        class="animate font-serif text-2xl font-semibold leading-snug tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 sm:text-3xl"
       >
         {post.data.title}
       </h1>
       {
         post.data.description && (
-          <p class="animate text-[15px] sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed font-normal">
+          <p class="animate text-[15px] font-normal leading-relaxed text-zinc-500 dark:text-zinc-400 sm:text-base">
             {post.data.description}
           </p>
         )

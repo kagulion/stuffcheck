@@ -29,36 +29,43 @@ const { Content } = await project.render();
     <div class="animate mb-8">
       <BackToPrev href="/projects"> Все проекты </BackToPrev>
     </div>
-    <div class="space-y-3 pb-8 mb-8 border-b border-zinc-100 dark:border-zinc-800/60">
-      <div class="animate flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 font-normal">
+    <div
+      class="mb-8 space-y-3 border-b border-zinc-100 pb-8 dark:border-zinc-800/60"
+    >
+      <div
+        class="animate flex items-center gap-2 text-xs font-normal text-zinc-400 dark:text-zinc-500"
+      >
         <FormattedDate date={project.data.date} />
         <span>·</span>
         <span>{readingTime(project.body)}</span>
       </div>
-      <h1 class="animate text-2xl sm:text-3xl font-semibold tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 leading-snug">
+      <h1
+        class="animate text-2xl font-semibold leading-snug tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 sm:text-3xl"
+      >
         {project.data.title}
       </h1>
-      {(project.data.demoURL || project.data.repoURL) && (
-        <nav class="animate flex gap-2 text-sm pt-1">
-          {project.data.demoURL && (
-            <Link href={project.data.demoURL} external>
-              Демо
-            </Link>
-          )}
-          {project.data.demoURL && project.data.repoURL && (
-            <span class="text-zinc-300 dark:text-zinc-700">/</span>
-          )}
-          {project.data.repoURL && (
-            <Link href={project.data.repoURL} external>
-              Репозиторий
-            </Link>
-          )}
-        </nav>
-      )}
+      {
+        (project.data.demoURL || project.data.repoURL) && (
+          <nav class="animate flex gap-2 pt-1 text-sm">
+            {project.data.demoURL && (
+              <Link href={project.data.demoURL} external>
+                Демо
+              </Link>
+            )}
+            {project.data.demoURL && project.data.repoURL && (
+              <span class="text-zinc-300 dark:text-zinc-700">/</span>
+            )}
+            {project.data.repoURL && (
+              <Link href={project.data.repoURL} external>
+                Репозиторий
+              </Link>
+            )}
+          </nav>
+        )
+      }
     </div>
     <article class="animate">
       <Content />
     </article>
   </Container>
 </PageLayout>
-
