@@ -2,6 +2,7 @@
 title: "Markdown syntax guide"
 description: "Get started writing content in markdown."
 date: "Mar 17 2024"
+draft: true
 ---
 
 ---
@@ -392,6 +393,3 @@ https://www.markdownguide.org/basic-syntax
 https://www.markdownguide.org/extended-syntax/
 
 ---
-
-
-
