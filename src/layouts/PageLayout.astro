@@ -16,11 +16,20 @@ const { title, description } = Astro.props;
   <head>
     <Head title={`${title} | ${SITE.NAME}`} description={description} />
   </head>
-  <body>
+  <body class="relative min-h-screen">
+    <!-- Ambient top glow -->
+    <div class="fixed inset-x-0 top-0 h-[280px] sm:h-[340px] pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+      <div 
+        class="absolute -top-[100px] sm:-top-[120px] left-1/2 -translate-x-1/2 w-[850px] sm:w-[1100px] h-[300px] sm:h-[360px] opacity-70 dark:opacity-20 blur-[80px] sm:blur-[100px] transform-gpu"
+        style="background: radial-gradient(circle at 18% 45%, rgba(244, 114, 182, 0.55) 0%, rgba(232, 121, 249, 0.35) 30%, transparent 65%), radial-gradient(circle at 50% 35%, rgba(56, 189, 248, 0.5) 0%, rgba(103, 232, 249, 0.3) 30%, transparent 65%), radial-gradient(circle at 82% 45%, rgba(52, 211, 153, 0.55) 0%, rgba(110, 231, 183, 0.35) 30%, transparent 65%);"
+      ></div>
+    </div>
+
     <main>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+
 
