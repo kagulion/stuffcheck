@@ -15,9 +15,9 @@ export function formatDate(date: Date) {
 
 export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "");
-  const wordCount = textOnly.split(/\s+/).length;
-  const readingTimeMinutes = (wordCount / 200 + 1).toFixed();
-  return `${readingTimeMinutes} минут(ы) читать`;
+  const wordCount = textOnly.split(/\s+/).filter(Boolean).length;
+  const readingTimeMinutes = Math.max(1, Math.ceil(wordCount / 200));
+  return `${readingTimeMinutes} мин чтения`;
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string): string {

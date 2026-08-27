@@ -2,9 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --bg-page: #fafafa;
+    --text-primary: #18181b;
+    --text-secondary: #3f3f46;
+    --text-muted: #71717a;
+    --border-subtle: #e4e4e7;
+    --code-bg: #0d1117;
+    --code-text: #e6edf3;
+  }
+
+  .dark {
+    --bg-page: #090d16;
+    --text-primary: #fafafa;
+    --text-secondary: #d4d4d8;
+    --text-muted: #a1a1aa;
+    --border-subtle: #27272a;
+    --code-bg: #090d16;
+    --code-text: #f0f6fc;
+  }
+}
+
 html {
   overflow-y: scroll;
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 html.dark {
@@ -13,48 +36,273 @@ html.dark {
 
 html,
 body {
-  @apply size-full;
+  @apply size-full min-h-screen;
 }
 
 body {
-  @apply font-sans antialiased;
+  @apply font-sans antialiased text-zinc-700 dark:text-zinc-300;
+  @apply bg-[#fafafa] dark:bg-[#090d16];
   @apply flex flex-col;
-  @apply bg-stone-100 dark:bg-stone-900;
-  @apply text-black/50 dark:text-white/75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  @apply bg-sky-500/20 text-sky-900 dark:bg-sky-400/25 dark:text-sky-100;
 }
 
 header {
-  @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
-  @apply backdrop-blur-sm saturate-200;
+  @apply fixed top-0 left-0 right-0 z-50 py-4;
+  @apply bg-[#fafafa]/80 dark:bg-[#090d16]/80;
+  @apply backdrop-blur-md border-b border-zinc-200/60 dark:border-zinc-800/60;
+  @apply transition-colors duration-300;
 }
 
 main {
-  @apply flex-1 py-32;
+  @apply flex-1 pt-24 sm:pt-28 pb-20;
 }
 
 footer {
-  @apply py-5 text-sm;
+  @apply py-8 text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-200/60 dark:border-zinc-800/60 mt-auto;
 }
+
+/* ==========================================================================
+   ARTICLE & MARKDOWN PROSE STYLING (TECH-BLOG)
+   ========================================================================== */
 
 article {
-  @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold prose-p:font-serif;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply max-w-none text-[16px] md:text-[17px] leading-[1.8] text-zinc-700 dark:text-zinc-300;
 }
 
-@layer utilities {
-  article a {
-    @apply font-sans text-current underline underline-offset-2;
-    @apply decoration-black/15 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
-  }
-  article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/25 dark:decoration-white/50;
-  }
+/* Headings Hierarchy */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  @apply font-sans font-bold tracking-tight text-zinc-950 dark:text-zinc-50;
+  @apply scroll-mt-24;
 }
 
+article h1 {
+  @apply text-2xl sm:text-3xl lg:text-4xl mt-12 mb-6 pb-3 border-b border-zinc-200/80 dark:border-zinc-800/80;
+}
+
+article h2 {
+  @apply text-xl sm:text-2xl mt-12 mb-4 pb-2 border-b border-zinc-200/50 dark:border-zinc-800/50;
+}
+
+article h3 {
+  @apply text-lg sm:text-xl font-semibold mt-9 mb-3 text-zinc-900 dark:text-zinc-100;
+}
+
+article h4 {
+  @apply text-base sm:text-lg font-semibold mt-7 mb-2 text-zinc-900 dark:text-zinc-100;
+}
+
+article h5 {
+  @apply text-sm sm:text-base font-semibold mt-5 mb-2 uppercase tracking-wider text-zinc-800 dark:text-zinc-200;
+}
+
+article h6 {
+  @apply text-xs sm:text-sm font-semibold mt-4 mb-2 uppercase tracking-wider text-zinc-600 dark:text-zinc-400;
+}
+
+/* Paragraphs */
+article p {
+  @apply my-5 leading-[1.8];
+}
+
+article p:first-child {
+  @apply mt-0;
+}
+
+/* Strong / Bold */
+article strong,
+article b {
+  @apply font-semibold text-zinc-950 dark:text-zinc-50;
+}
+
+/* Emphasis / Italic */
+article em,
+article i {
+  @apply italic text-zinc-800 dark:text-zinc-200;
+}
+
+/* Strikethrough */
+article del,
+article s {
+  @apply text-zinc-400 dark:text-zinc-500 line-through;
+}
+
+/* Links */
+article a {
+  @apply font-medium text-sky-600 dark:text-sky-400;
+  @apply underline underline-offset-4 decoration-sky-500/30 dark:decoration-sky-400/30;
+  @apply hover:decoration-sky-500 dark:hover:decoration-sky-400 hover:text-sky-700 dark:hover:text-sky-300;
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+/* Blockquotes / Callouts */
+article blockquote {
+  @apply my-6 pl-4 sm:pl-5 pr-4 py-3.5;
+  @apply border-l-4 border-sky-500 dark:border-sky-400;
+  @apply bg-sky-50/50 dark:bg-sky-950/20;
+  @apply rounded-r-xl;
+  @apply text-zinc-700 dark:text-zinc-300 font-normal;
+}
+
+article blockquote p {
+  @apply my-2 first:mt-0 last:mb-0;
+}
+
+article blockquote strong {
+  @apply text-zinc-950 dark:text-zinc-100;
+}
+
+/* Lists */
+article ul {
+  @apply my-5 pl-6 list-disc space-y-2;
+  @apply marker:text-sky-500/80 dark:marker:text-sky-400/80;
+}
+
+article ol {
+  @apply my-5 pl-6 list-decimal space-y-2;
+  @apply marker:font-mono marker:font-medium marker:text-sky-600 dark:marker:text-sky-400;
+}
+
+article li {
+  @apply leading-[1.75] pl-1;
+}
+
+article li > ul,
+article li > ol {
+  @apply my-2 pl-5;
+}
+
+article li > p {
+  @apply my-1.5;
+}
+
+/* Task Lists (GitHub flavored Markdown checkboxes) */
+article ul:has(input[type="checkbox"]) {
+  @apply list-none pl-0 space-y-2;
+}
+
+article li:has(input[type="checkbox"]) {
+  @apply flex items-start gap-2.5 pl-0;
+}
+
+article input[type="checkbox"] {
+  @apply size-4 mt-1 rounded border-zinc-300 dark:border-zinc-700 text-sky-600 focus:ring-sky-500 dark:bg-zinc-800 accent-sky-500 cursor-pointer;
+}
+
+/* Inline Code */
+article code:not(pre code) {
+  @apply font-mono text-[0.875em] font-normal px-1.5 py-0.5 rounded-md;
+  @apply bg-zinc-200/60 dark:bg-zinc-800/80;
+  @apply text-sky-700 dark:text-sky-300;
+  @apply border border-zinc-300/50 dark:border-zinc-700/60;
+  white-space: break-spaces;
+  word-break: break-word;
+}
+
+article code::before,
+article code::after {
+  content: none !important;
+}
+
+/* Fenced Code Blocks */
+article pre {
+  @apply my-6 rounded-xl overflow-x-auto;
+  @apply border border-zinc-200/80 dark:border-zinc-800;
+  @apply shadow-sm;
+  @apply font-mono text-[13.5px] sm:text-[14px] leading-relaxed;
+  @apply p-4 sm:p-5;
+  @apply bg-[#0d1117] text-[#e6edf3] !important;
+}
+
+article pre code {
+  @apply bg-transparent p-0 text-inherit border-none font-mono text-[13.5px] sm:text-[14px] leading-relaxed;
+}
+
+/* Custom Scrollbar for Code Blocks */
+article pre::-webkit-scrollbar {
+  height: 6px;
+}
+article pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+article pre::-webkit-scrollbar-thumb {
+  @apply bg-zinc-700/50 hover:bg-zinc-600 rounded-full;
+}
+
+/* Horizontal Rules */
+article hr {
+  @apply my-10 h-px border-0;
+  background: linear-gradient(to right, transparent, rgba(161, 161, 170, 0.3) 50%, transparent);
+}
+
+.dark article hr {
+  background: linear-gradient(to right, transparent, rgba(113, 113, 122, 0.4) 50%, transparent);
+}
+
+/* Tables */
+article table {
+  @apply w-full my-6 border-collapse text-left text-sm;
+  @apply rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800;
+  display: table;
+}
+
+article thead {
+  @apply bg-zinc-100/90 dark:bg-zinc-800/70;
+  @apply border-b border-zinc-200 dark:border-zinc-700/80;
+}
+
+article th {
+  @apply px-4 py-3 font-semibold text-zinc-900 dark:text-zinc-100 text-xs tracking-wider uppercase;
+}
+
+article td {
+  @apply px-4 py-3 border-b border-zinc-100 dark:border-zinc-800/70 text-zinc-700 dark:text-zinc-300;
+}
+
+article tbody tr:last-child td {
+  @apply border-b-0;
+}
+
+article tbody tr:hover {
+  @apply bg-zinc-500/[0.03] dark:bg-zinc-400/[0.04];
+}
+
+/* Keyboard / KBD */
+article kbd {
+  @apply font-mono text-xs font-semibold px-2 py-0.5 rounded-md;
+  @apply bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200;
+  @apply border border-zinc-300 dark:border-zinc-700;
+  @apply shadow-[0_1px_0_1px_rgba(0,0,0,0.06)] dark:shadow-[0_1px_0_1px_rgba(0,0,0,0.3)];
+}
+
+/* Abbreviations */
+article abbr {
+  @apply cursor-help underline decoration-dotted decoration-zinc-400 dark:decoration-zinc-600 underline-offset-4;
+}
+
+/* Highlights */
+article mark {
+  @apply bg-amber-200/70 dark:bg-amber-500/20 text-zinc-950 dark:text-amber-200 px-1.5 py-0.5 rounded;
+}
+
+/* Images */
+article img {
+  @apply rounded-xl border border-zinc-200/80 dark:border-zinc-800 shadow-sm mx-auto my-8;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Animations */
 .animate {
   @apply opacity-0 translate-y-3;
   @apply transition-all duration-700 ease-out;

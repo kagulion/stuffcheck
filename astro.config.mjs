@@ -6,4 +6,10 @@ import tailwind from '@astrojs/tailwind'
 export default defineConfig({
   site: 'https://stuffcheck.vercel.app',
   integrations: [mdx(), sitemap(), tailwind()],
+  markdown: {
+    shikiConfig: {
+      theme: 'github-dark-dimmed',
+      wrap: true,
+    },
+  },
 })
