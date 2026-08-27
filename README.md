@@ -1,67 +1,79 @@
-![Astro Nano](_astro_nano.png)
+# Stuffcheck
 
-Astro Nano is a static, minimalist, lightweight, lightning fast portfolio and blog theme.
+Супер-минималистичный текстовый блог.
 
-Built with Astro, Tailwind and Typescript, an no frameworks.
+Построен на **Astro**, **Tailwind** и **TypeScript** с акцентом на чистую типографику и книжный формат, без лишнего визуального шума.
 
-It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
+## Особенности
 
-# 🚀 Deploy your own
+- **Светлая и тёмная темы**: поддержка `light`, `dark` и `system` с плавным переключением и нулевым мерцанием при загрузке.
+- **Максимальная скорость**: статическая генерация (SSG), 100/100 Lighthouse score, мгновенная загрузка страниц.
+- **Content Collections**: строгая типизация схемы статей через Zod в `src/content/config.ts`.
+- **SEO & RSS**: автоматическая генерация `sitemap.xml`, `rss.xml` и мета-тегов Open Graph / Twitter.
 
-[![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano) [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
+## Структура проекта
 
-# 📋 Features
+```text
+├── public/
+│   ├── favicon-*.svg       # Иконки сайта
+│   └── user-files/         # Файлы для скачивания в статьях
+├── src/
+│   ├── components/         # UI-компоненты (Header, Footer, ArrowCard, BackToPrev и др.)
+│   ├── content/
+│   │   ├── blog/           # Статьи блога в формате Markdown / MDX
+│   │   └── config.ts       # Схема валидации контента
+│   ├── layouts/
+│   │   └── PageLayout.astro# Базовый макет с фоновым градиентом
+│   ├── pages/
+│   │   ├── blog/           # Список статей с группировкой по годам и страница статьи
+│   │   ├── index.astro     # Главная страница
+│   │   ├── rss.xml.ts      # RSS-лента
+│   │   └── robots.txt.ts   # Robots.txt
+│   └── styles/
+│       └── global.css      # Стили, семантика Tailwind и правила типографики статей
+├── .prettierrc.mjs         # Конфигурация Prettier
+└── tailwind.config.mjs     # Конфигурация Tailwind CSS (шрифты EB Garamond, Inter, JetBrains Mono)
+```
 
-- ✅ 100/100 Lighthouse performance
-- ✅ Responsive
-- ✅ Accessible
-- ✅ SEO-friendly
-- ✅ Typesafe
-- ✅ Minimal style
-- ✅ Light/Dark Theme
-- ✅ Animated UI
-- ✅ Tailwind styling
-- ✅ Auto generated sitemap
-- ✅ Auto generated RSS Feed
-- ✅ Markdown support
-- ✅ MDX Support (components in your markdown)
+## Быстрый старт
 
-# 💯 Lighthouse score
+### Требования
 
-![Astro Nano Lighthouse Score](_lighthouse.png)
+- [Node.js](https://nodejs.org/) `>= 18.17.0`
+- [pnpm](https://pnpm.io/) (или npm / yarn / bun)
 
-# 🕊️ Lightweight
+### Команды
 
-No frameworks or added bulk
+```bash
+# 1. Установка зависимостей
+pnpm install
 
-# ⚡︎ Fast
+# 2. Запуск локального сервера разработки (http://localhost:4321)
+pnpm dev
 
-Rendered in ~40ms on localhost
+# 3. Проверка типов и сборка для продакшена (директория ./dist/)
+pnpm build
 
-# 📄 Configuration
+# 4. Локальный предпросмотр собранного сайта
+pnpm preview
 
-The blog posts on the demo serve as the documentation and configuration.
+# 5. Проверка и авто-форматирование кода
+pnpm run format      # Форматирование через Prettier
+pnpm lint            # Проверка линтером ESLint
+pnpm lint:fix        # Авто-исправление ошибок линтера
+```
 
-# 💻 Commands
+## Добавление новой статьи
 
-All commands are run from the root of the project, from a terminal:
+Чтобы опубликовать новую статью, создайте папку с файлом `index.md` в директории `src/content/blog/`:
 
-Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, etc
+```markdowntitle: 'Название статьи'
+description: 'Краткое описание публикации для превью и метатегов'
+date: 'Aug 27 2026'
+draft: false
+Текст вашей статьи в формате Markdown...
+```
 
-| Command                   | Action                                            |
-| :------------------------ | :------------------------------------------------ |
-| `npm install`             | Installs dependencies                             |
-| `npm run dev`             | Starts local dev server at `localhost:4321`       |
-| `npm run dev:network`     | Starts local dev server on local network          |
-| `npm run sync`            | Generates TypeScript types for all Astro modules. |
-| `npm run build`           | Build your production site to `./dist/`           |
-| `npm run preview`         | Preview your build locally, before deploying      |
-| `npm run preview:network` | Preview build on local network                    |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check`  |
-| `npm run astro -- --help` | Get help using the Astro CLI                      |
-| `npm run lint`            | Run ESLint                                        |
-| `npm run lint:fix`        | Auto-fix ESLint issues                            |
+## 📄 Лицензия
 
-# 🏛️ License
-
-MIT
+[MIT](LICENSE)
