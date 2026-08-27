@@ -28,14 +28,18 @@ const { Content } = await post.render();
     <div class="animate mb-8">
       <BackToPrev href="/blog"> Все статьи </BackToPrev>
     </div>
-    <div class="space-y-3 pb-8 mb-8 border-b border-zinc-100 dark:border-zinc-800/60">
-      <div class="animate flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 font-normal">
+    <div
+      class="space-y-3 pb-8 mb-8 border-b border-zinc-100 dark:border-zinc-800/60"
+    >
+      <div
+        class="animate flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 font-normal"
+      >
         <FormattedDate date={post.data.date} />
         <span>·</span>
         <span>{readingTime(post.body)}</span>
       </div>
       <h1
-        class="animate text-2xl sm:text-3xl font-semibold tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 leading-snug"
+        class="animate text-2xl sm:text-3xl font-semibold font-serif tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 leading-snug"
       >
         {post.data.title}
       </h1>
@@ -52,4 +56,3 @@ const { Content } = await post.render();
     </article>
   </Container>
 </PageLayout>
-

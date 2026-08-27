@@ -88,7 +88,7 @@ article h2 {
 }
 
 article h3 {
-  @apply text-lg sm:text-xl font-medium mt-8 mb-3 text-zinc-900 dark:text-zinc-100;
+  @apply text-lg sm:text-xl font-medium mt-4 mb-3 text-zinc-900 dark:text-zinc-100;
 }
 
 article h4 {
@@ -105,7 +105,7 @@ article h6 {
 
 /* Paragraphs */
 article p {
-  @apply my-4 leading-[1.75];
+  @apply my-4 leading-[1.75] text-pretty;
 }
 
 article p:first-child {
@@ -140,9 +140,9 @@ article a {
 
 /* Blockquotes / Callouts */
 article blockquote {
-  @apply my-6 pl-4 py-1;
+  @apply my-6 pl-8 py-1;
   @apply border-l-2 border-zinc-300 dark:border-zinc-700;
-  @apply text-zinc-600 dark:text-zinc-400 font-normal italic;
+  @apply text-zinc-600 dark:text-zinc-400 font-normal;
 }
 
 article blockquote p {
@@ -155,12 +155,12 @@ article blockquote strong {
 
 /* Lists */
 article ul {
-  @apply my-4 pl-5 list-disc space-y-1.5;
+  @apply my-4 pl-8 list-disc space-y-1.5;
   @apply marker:text-zinc-400 dark:marker:text-zinc-600;
 }
 
 article ol {
-  @apply my-4 pl-5 list-decimal space-y-1.5;
+  @apply my-4 pl-8 list-decimal space-y-1.5;
   @apply marker:font-mono marker:text-zinc-400 dark:marker:text-zinc-500;
 }
 
@@ -215,7 +215,7 @@ article pre {
 }
 
 article pre.astro-code {
-  background-color: #f8f9fa !important;
+  background-color: #f8f9fa80 !important;
 }
 
 article pre.astro-code span {
