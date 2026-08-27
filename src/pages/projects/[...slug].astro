@@ -24,32 +24,31 @@ const { Content } = await project.render();
 
 <PageLayout title={project.data.title} description={project.data.description}>
   <Container>
-    <div class="animate">
-      <BackToPrev href="/projects"> Back to projects </BackToPrev>
+    <div class="animate mb-8">
+      <BackToPrev href="/projects"> Все проекты </BackToPrev>
     </div>
-    <div class="my-8 sm:my-10 space-y-3 pb-8 border-b border-zinc-200/80 dark:border-zinc-800/80">
-      <div class="animate flex items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+    <div class="space-y-3 pb-8 mb-8 border-b border-zinc-100 dark:border-zinc-800/60">
+      <div class="animate flex items-center gap-2 text-xs text-zinc-400 dark:text-zinc-500 font-normal">
         <FormattedDate date={project.data.date} />
-        <div class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono bg-zinc-200/60 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-300/50 dark:border-zinc-700/60">
-          {readingTime(project.body)}
-        </div>
+        <span>·</span>
+        <span>{readingTime(project.body)}</span>
       </div>
-      <h1 class="animate text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 leading-tight">
+      <h1 class="animate text-2xl sm:text-3xl font-semibold tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 leading-snug">
         {project.data.title}
       </h1>
       {(project.data.demoURL || project.data.repoURL) && (
-        <nav class="animate flex gap-1">
+        <nav class="animate flex gap-2 text-sm pt-1">
           {project.data.demoURL && (
             <Link href={project.data.demoURL} external>
-              demo
+              Демо
             </Link>
           )}
           {project.data.demoURL && project.data.repoURL && (
-            <span>/</span>
+            <span class="text-zinc-300 dark:text-zinc-700">/</span>
           )}
           {project.data.repoURL && (
             <Link href={project.data.repoURL} external>
-              repo
+              Репозиторий
             </Link>
           )}
         </nav>
@@ -60,3 +59,4 @@ const { Content } = await project.render();
     </article>
   </Container>
 </PageLayout>
+

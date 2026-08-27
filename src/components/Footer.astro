@@ -7,25 +7,24 @@ import BackToTop from '@components/BackToTop.astro';
 <footer class="animate">
   <Container>
     <div class="relative">
-      <div class="absolute right-0 -top-20">
+      <div class="absolute right-0 -top-16">
         <BackToTop />
       </div>
     </div>
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center text-xs sm:text-sm text-zinc-400 dark:text-zinc-500">
       <div>
-        &copy; 2026 {`|`}
-        {SITE.NAME}
+        &copy; 2026 · {SITE.NAME}
       </div>
-      <div class="flex flex-wrap gap-1 items-center">
+      <div class="flex items-center gap-1">
         <button
           id="light-theme-button"
           aria-label="Light theme"
-          class="group size-8 flex items-center justify-center rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/80 transition-colors duration-200"
+          class="size-7 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -47,12 +46,12 @@ import BackToTop from '@components/BackToTop.astro';
         <button
           id="dark-theme-button"
           aria-label="Dark theme"
-          class="group size-8 flex items-center justify-center rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/80 transition-colors duration-200"
+          class="size-7 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -66,12 +65,12 @@ import BackToTop from '@components/BackToTop.astro';
         <button
           id="system-theme-button"
           aria-label="System theme"
-          class="group size-8 flex items-center justify-center rounded-lg text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/60 dark:hover:bg-zinc-800/80 transition-colors duration-200"
+          class="size-7 flex items-center justify-center rounded-md text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="15"
+            height="15"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -88,3 +87,4 @@ import BackToTop from '@components/BackToTop.astro';
     </div>
   </Container>
 </footer>
+

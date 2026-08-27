@@ -4,22 +4,22 @@
 
 @layer base {
   :root {
-    --bg-page: #fafafa;
-    --text-primary: #18181b;
-    --text-secondary: #3f3f46;
-    --text-muted: #71717a;
-    --border-subtle: #e4e4e7;
-    --code-bg: #f6f8fa;
-    --code-text: #24292f;
+    --bg-page: #ffffff;
+    --text-primary: #171717;
+    --text-secondary: #737373;
+    --text-muted: #a3a3a3;
+    --border-subtle: #e5e5e5;
+    --code-bg: #f8f9fa;
+    --code-text: #171717;
   }
 
   .dark {
-    --bg-page: #16181d;
-    --text-primary: #f4f4f5;
-    --text-secondary: #d4d4d8;
-    --text-muted: #a1a1aa;
-    --border-subtle: #2e333d;
-    --code-bg: #1f242c;
+    --bg-page: #0d0d0e;
+    --text-primary: #ededed;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border-subtle: #1f1f23;
+    --code-bg: #141416;
     --code-text: #e6edf3;
   }
 }
@@ -41,7 +41,7 @@ body {
 
 body {
   @apply font-sans antialiased text-zinc-700 dark:text-zinc-300;
-  @apply bg-[#fafafa] dark:bg-[#16181d];
+  @apply bg-[#ffffff] dark:bg-[#0d0d0e];
   @apply flex flex-col;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -49,30 +49,30 @@ body {
 }
 
 ::selection {
-  @apply bg-sky-500/20 text-sky-900 dark:bg-sky-400/25 dark:text-sky-100;
+  @apply bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100;
 }
 
 header {
-  @apply fixed top-0 left-0 right-0 z-50 py-4;
-  @apply bg-[#fafafa]/80 dark:bg-[#16181d]/85;
-  @apply backdrop-blur-md border-b border-zinc-200/70 dark:border-zinc-800/80;
-  @apply transition-colors duration-300;
+  @apply fixed top-0 left-0 right-0 z-50 py-4 sm:py-5;
+  @apply bg-white/85 dark:bg-[#0d0d0e]/85;
+  @apply backdrop-blur-md border-b border-zinc-100/90 dark:border-zinc-900/90;
+  @apply transition-colors duration-200;
 }
 
 main {
-  @apply flex-1 pt-24 sm:pt-28 pb-20;
+  @apply flex-1 pt-24 sm:pt-28 pb-16;
 }
 
 footer {
-  @apply py-8 text-sm text-zinc-500 dark:text-zinc-400 border-t border-zinc-200/70 dark:border-zinc-800/80 mt-auto;
+  @apply py-8 text-sm text-zinc-400 dark:text-zinc-500 border-t border-zinc-100/80 dark:border-zinc-900/80 mt-auto;
 }
 
 /* ==========================================================================
-   ARTICLE & MARKDOWN PROSE STYLING (TECH-BLOG)
+   MINIMALIST ARTICLE & MARKDOWN PROSE STYLING
    ========================================================================== */
 
 article {
-  @apply max-w-none text-[16px] md:text-[17px] leading-[1.8] text-zinc-700 dark:text-zinc-300;
+  @apply max-w-none text-[15.5px] sm:text-[16px] leading-[1.75] text-zinc-700 dark:text-zinc-300 font-normal;
 }
 
 /* Headings Hierarchy */
@@ -82,37 +82,37 @@ article h3,
 article h4,
 article h5,
 article h6 {
-  @apply font-sans font-bold tracking-tight text-zinc-950 dark:text-zinc-50;
+  @apply font-sans font-medium tracking-tight text-zinc-900 dark:text-zinc-100;
   @apply scroll-mt-24;
 }
 
 article h1 {
-  @apply text-2xl sm:text-3xl lg:text-4xl mt-12 mb-6 pb-3 border-b border-zinc-200/80 dark:border-zinc-800/80;
+  @apply text-2xl sm:text-3xl font-semibold mt-10 mb-5 pb-3 border-b border-zinc-100 dark:border-zinc-800/80;
 }
 
 article h2 {
-  @apply text-xl sm:text-2xl mt-12 mb-4 pb-2 border-b border-zinc-200/50 dark:border-zinc-800/50;
+  @apply text-xl sm:text-2xl font-semibold mt-10 mb-4;
 }
 
 article h3 {
-  @apply text-lg sm:text-xl font-semibold mt-9 mb-3 text-zinc-900 dark:text-zinc-100;
+  @apply text-lg sm:text-xl font-medium mt-8 mb-3 text-zinc-900 dark:text-zinc-100;
 }
 
 article h4 {
-  @apply text-base sm:text-lg font-semibold mt-7 mb-2 text-zinc-900 dark:text-zinc-100;
+  @apply text-base sm:text-lg font-medium mt-6 mb-2 text-zinc-900 dark:text-zinc-100;
 }
 
 article h5 {
-  @apply text-sm sm:text-base font-semibold mt-5 mb-2 uppercase tracking-wider text-zinc-800 dark:text-zinc-200;
+  @apply text-sm sm:text-base font-medium mt-5 mb-2 uppercase tracking-wider text-zinc-700 dark:text-zinc-300;
 }
 
 article h6 {
-  @apply text-xs sm:text-sm font-semibold mt-4 mb-2 uppercase tracking-wider text-zinc-600 dark:text-zinc-400;
+  @apply text-xs sm:text-sm font-medium mt-4 mb-2 uppercase tracking-wider text-zinc-500 dark:text-zinc-400;
 }
 
 /* Paragraphs */
 article p {
-  @apply my-5 leading-[1.8];
+  @apply my-4 leading-[1.75];
 }
 
 article p:first-child {
@@ -122,7 +122,7 @@ article p:first-child {
 /* Strong / Bold */
 article strong,
 article b {
-  @apply font-semibold text-zinc-950 dark:text-zinc-50;
+  @apply font-medium text-zinc-900 dark:text-zinc-100;
 }
 
 /* Emphasis / Italic */
@@ -139,19 +139,17 @@ article s {
 
 /* Links */
 article a {
-  @apply font-medium text-sky-600 dark:text-sky-400;
-  @apply underline underline-offset-4 decoration-sky-500/30 dark:decoration-sky-400/30;
-  @apply hover:decoration-sky-500 dark:hover:decoration-sky-400 hover:text-sky-700 dark:hover:text-sky-300;
-  @apply transition-colors duration-200 ease-in-out;
+  @apply text-zinc-900 dark:text-zinc-100;
+  @apply underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700;
+  @apply hover:decoration-zinc-900 dark:hover:decoration-zinc-100;
+  @apply transition-colors duration-150 ease-in-out;
 }
 
 /* Blockquotes / Callouts */
 article blockquote {
-  @apply my-6 pl-4 sm:pl-5 pr-4 py-3.5;
-  @apply border-l-4 border-sky-500 dark:border-sky-400;
-  @apply bg-sky-50/60 dark:bg-sky-950/30;
-  @apply rounded-r-xl;
-  @apply text-zinc-700 dark:text-zinc-300 font-normal;
+  @apply my-6 pl-4 py-1;
+  @apply border-l-2 border-zinc-300 dark:border-zinc-700;
+  @apply text-zinc-600 dark:text-zinc-400 font-normal italic;
 }
 
 article blockquote p {
@@ -159,31 +157,31 @@ article blockquote p {
 }
 
 article blockquote strong {
-  @apply text-zinc-950 dark:text-zinc-100;
+  @apply text-zinc-800 dark:text-zinc-200 font-medium;
 }
 
 /* Lists */
 article ul {
-  @apply my-5 pl-6 list-disc space-y-2;
-  @apply marker:text-sky-500/80 dark:marker:text-sky-400/80;
+  @apply my-4 pl-5 list-disc space-y-1.5;
+  @apply marker:text-zinc-400 dark:marker:text-zinc-600;
 }
 
 article ol {
-  @apply my-5 pl-6 list-decimal space-y-2;
-  @apply marker:font-mono marker:font-medium marker:text-sky-600 dark:marker:text-sky-400;
+  @apply my-4 pl-5 list-decimal space-y-1.5;
+  @apply marker:font-mono marker:text-zinc-400 dark:marker:text-zinc-500;
 }
 
 article li {
-  @apply leading-[1.75] pl-1;
+  @apply leading-[1.75];
 }
 
 article li > ul,
 article li > ol {
-  @apply my-2 pl-5;
+  @apply my-1.5 pl-5;
 }
 
 article li > p {
-  @apply my-1.5;
+  @apply my-1;
 }
 
 /* Task Lists (GitHub flavored Markdown checkboxes) */
@@ -196,15 +194,15 @@ article li:has(input[type="checkbox"]) {
 }
 
 article input[type="checkbox"] {
-  @apply size-4 mt-1 rounded border-zinc-300 dark:border-zinc-700 text-sky-600 focus:ring-sky-500 dark:bg-zinc-800 accent-sky-500 cursor-pointer;
+  @apply size-4 mt-1 rounded border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:bg-zinc-800 accent-zinc-800 dark:accent-zinc-200 cursor-pointer;
 }
 
 /* Inline Code */
 article code:not(pre code) {
-  @apply font-mono text-[0.875em] font-normal px-1.5 py-0.5 rounded-md;
-  @apply bg-zinc-200/60 dark:bg-zinc-800/80;
-  @apply text-sky-700 dark:text-sky-300;
-  @apply border border-zinc-300/50 dark:border-zinc-700/60;
+  @apply font-mono text-[0.875em] font-normal px-1.5 py-0.5 rounded;
+  @apply bg-zinc-100 dark:bg-zinc-800/70;
+  @apply text-zinc-900 dark:text-zinc-100;
+  @apply border border-zinc-200/60 dark:border-zinc-700/50;
   white-space: break-spaces;
   word-break: break-word;
 }
@@ -216,16 +214,15 @@ article code::after {
 
 /* Fenced Code Blocks */
 article pre {
-  @apply my-6 rounded-xl overflow-x-auto;
-  @apply border border-zinc-200 dark:border-zinc-700/70;
-  @apply shadow-sm;
+  @apply my-6 rounded-lg overflow-x-auto;
+  @apply border border-zinc-200/70 dark:border-zinc-800/80;
   @apply font-mono text-[13.5px] sm:text-[14px] leading-relaxed;
   @apply p-4 sm:p-5;
-  @apply bg-[#f6f8fa] text-zinc-900;
+  @apply bg-[#f8f9fa] text-zinc-900;
 }
 
 article pre.astro-code {
-  background-color: #f6f8fa !important;
+  background-color: #f8f9fa !important;
 }
 
 article pre.astro-code span {
@@ -233,11 +230,11 @@ article pre.astro-code span {
 }
 
 .dark article pre {
-  @apply bg-[#1f242c] text-[#e6edf3] border-zinc-700/70;
+  @apply bg-[#141416] text-[#e6edf3] border-zinc-800/80;
 }
 
 .dark article pre.astro-code {
-  background-color: #1f242c !important;
+  background-color: #141416 !important;
 }
 
 .dark article pre.astro-code span {
@@ -246,43 +243,38 @@ article pre.astro-code span {
 
 /* Custom Scrollbar for Code Blocks */
 article pre::-webkit-scrollbar {
-  height: 6px;
+  height: 5px;
 }
 article pre::-webkit-scrollbar-track {
   background: transparent;
 }
 article pre::-webkit-scrollbar-thumb {
-  @apply bg-zinc-400/50 dark:bg-zinc-600/50 hover:bg-zinc-500 dark:hover:bg-zinc-500 rounded-full;
+  @apply bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400 dark:hover:bg-zinc-600 rounded-full;
 }
 
 /* Horizontal Rules */
 article hr {
-  @apply my-10 h-px border-0;
-  background: linear-gradient(to right, transparent, rgba(161, 161, 170, 0.3) 50%, transparent);
-}
-
-.dark article hr {
-  background: linear-gradient(to right, transparent, rgba(113, 113, 122, 0.4) 50%, transparent);
+  @apply my-8 border-0 border-t border-zinc-200/60 dark:border-zinc-800/70;
 }
 
 /* Tables */
 article table {
   @apply w-full my-6 border-collapse text-left text-sm;
-  @apply rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-700/70;
+  @apply rounded-lg overflow-hidden border border-zinc-200/80 dark:border-zinc-800/80;
   display: table;
 }
 
 article thead {
-  @apply bg-zinc-100/90 dark:bg-zinc-800/80;
-  @apply border-b border-zinc-200 dark:border-zinc-700/80;
+  @apply bg-zinc-50 dark:bg-zinc-900/60;
+  @apply border-b border-zinc-200/80 dark:border-zinc-800/80;
 }
 
 article th {
-  @apply px-4 py-3 font-semibold text-zinc-900 dark:text-zinc-100 text-xs tracking-wider uppercase;
+  @apply px-3.5 py-2.5 font-medium text-zinc-900 dark:text-zinc-100 text-xs tracking-wider uppercase;
 }
 
 article td {
-  @apply px-4 py-3 border-b border-zinc-100 dark:border-zinc-800/70 text-zinc-700 dark:text-zinc-300;
+  @apply px-3.5 py-2.5 border-b border-zinc-100 dark:border-zinc-800/50 text-zinc-700 dark:text-zinc-300;
 }
 
 article tbody tr:last-child td {
@@ -290,15 +282,14 @@ article tbody tr:last-child td {
 }
 
 article tbody tr:hover {
-  @apply bg-zinc-500/[0.03] dark:bg-zinc-400/[0.06];
+  @apply bg-zinc-50/75 dark:bg-zinc-900/30;
 }
 
 /* Keyboard / KBD */
 article kbd {
-  @apply font-mono text-xs font-semibold px-2 py-0.5 rounded-md;
+  @apply font-mono text-xs font-medium px-1.5 py-0.5 rounded;
   @apply bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200;
-  @apply border border-zinc-300 dark:border-zinc-700;
-  @apply shadow-[0_1px_0_1px_rgba(0,0,0,0.06)] dark:shadow-[0_1px_0_1px_rgba(0,0,0,0.3)];
+  @apply border border-zinc-300/80 dark:border-zinc-700;
 }
 
 /* Abbreviations */
@@ -308,20 +299,20 @@ article abbr {
 
 /* Highlights */
 article mark {
-  @apply bg-amber-200/70 dark:bg-amber-500/20 text-zinc-950 dark:text-amber-200 px-1.5 py-0.5 rounded;
+  @apply bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-1 py-0.5 rounded;
 }
 
 /* Images */
 article img {
-  @apply rounded-xl border border-zinc-200/80 dark:border-zinc-700/70 shadow-sm mx-auto my-8;
+  @apply rounded-lg border border-zinc-200/60 dark:border-zinc-800/60 mx-auto my-6;
   max-width: 100%;
   height: auto;
 }
 
 /* Animations */
 .animate {
-  @apply opacity-0 translate-y-3;
-  @apply transition-all duration-700 ease-out;
+  @apply opacity-0 translate-y-2;
+  @apply transition-all duration-500 ease-out;
 }
 
 .animate.show {

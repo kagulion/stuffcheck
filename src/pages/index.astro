@@ -3,128 +3,61 @@ import { getCollection } from 'astro:content';
 import Container from '@components/Container.astro';
 import PageLayout from '@layouts/PageLayout.astro';
 import ArrowCard from '@components/ArrowCard.astro';
-import Link from '@components/Link.astro';
 import { SITE, HOME } from '@consts';
 
 const blog = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+  .slice(0, 6);
 ---
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <!-- <div class="animate mb-8">
-      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 flex items-center gap-2">
-        Привет <span class="text-2xl inline-block animate-bounce">👋🏻</span>
-      </h1>
-      <p class="mt-2 text-zinc-600 dark:text-zinc-400 text-base sm:text-lg">
-        Блог о технологиях, архитектуре и AI-разработке.
-      </p>
-    </div> -->
+    <div class="space-y-12 sm:space-y-14">
+      <!-- Header Intro (Emil Kowalski style) -->
+      <section class="animate space-y-1">
+        <h1 class="text-[17px] font-medium text-zinc-900 dark:text-zinc-100 tracking-[-0.01em]">
+          {SITE.NAME}
+        </h1>
+        <p class="text-sm text-zinc-500 dark:text-zinc-400 font-normal">
+          AI-разработка, архитектура и веб-интерфейсы
+        </p>
+      </section>
 
-    <div class="space-y-12">
-      <!-- Последние посты в блоге -->
-      <section class="animate space-y-5">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h1
-            class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50"
+      <!-- About Section -->
+      <section class="animate space-y-3">
+        <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          О проекте
+        </h2>
+        <p class="text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400 font-normal">
+          Блог о практическом применении AI-агентов в кодовой базе, системном дизайне, инструментах разработчика и создании быстрых минималистичных веб-приложений.
+        </p>
+      </section>
+
+      <!-- Recent Posts Section -->
+      <section class="animate space-y-3">
+        <div class="flex items-baseline justify-between mb-1">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+            Статьи
+          </h2>
+          <a
+            href="/blog"
+            class="text-xs text-zinc-400 hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-zinc-100 transition-colors"
           >
-            Блог
-          </h1>
-          <Link href="/blog" class="text-sm font-medium">
-            Смотреть все &rarr;
-          </Link>
+            Все публикации &rarr;
+          </a>
         </div>
-        <ul class="flex flex-col gap-3.5">
+        <ul class="flex flex-col gap-0.5">
           {
             blog.map((post) => (
               <li>
-                <ArrowCard entry={post} />
+                <ArrowCard entry={post} showDate={true} />
               </li>
             ))
           }
         </ul>
       </section>
-
-      <!-- <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Work Experience
-          </h5>
-          <Link href="/work"> See all work </Link>
-        </div>
-        <ul class="flex flex-col space-y-4">
-          {
-            work.map((entry) => (
-              <li>
-                <div class="text-sm opacity-75">
-                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-                </div>
-                <div class="font-semibold text-black dark:text-white">
-                  {entry.data.company}
-                </div>
-                <div class="text-sm opacity-75">{entry.data.role}</div>
-                <article>
-                  <entry.Content />
-                </article>
-              </li>
-            ))
-          }
-        </ul>
-      </section> -->
-
-      <!-- <section class="animate space-y-6">
-        <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
-            Recent projects
-          </h5>
-          <Link href="/projects"> See all projects </Link>
-        </div>
-        <ul class="flex flex-col gap-4">
-          {
-            projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
-              </li>
-            ))
-          }
-        </ul>
-      </section> -->
-
-      <!-- <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
-        <article>
-          <p>
-            If you want to get in touch with me about something or just to say
-            hi, reach out on social media or send me an email.
-          </p>
-        </article>
-        <ul class="flex flex-wrap gap-2">
-          {
-            SOCIALS.map((SOCIAL) => (
-              <li class="flex gap-x-2 text-nowrap">
-                <Link
-                  href={SOCIAL.HREF}
-                  external
-                  aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
-                >
-                  {SOCIAL.NAME}
-                </Link>
-                {'/'}
-              </li>
-            ))
-          }
-          <li class="line-clamp-1">
-            <Link
-              href={`mailto:${SITE.EMAIL}`}
-              aria-label={`Email ${SITE.NAME}`}
-            >
-              {SITE.EMAIL}
-            </Link>
-          </li>
-        </ul>
-      </section> -->
     </div>
   </Container>
 </PageLayout>
+

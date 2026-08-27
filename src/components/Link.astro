@@ -14,7 +14,9 @@ const { href, external, underline = true, class: className, ...rest } = Astro.pr
 <a 
   href={href} 
   target={ external ? "_blank" : "_self" } 
-  class={cn("inline-block text-zinc-700 dark:text-zinc-300 hover:text-sky-600 dark:hover:text-sky-400 decoration-zinc-300 dark:decoration-zinc-700 hover:decoration-sky-500 dark:hover:decoration-sky-400 transition-colors duration-200 ease-in-out", underline && "underline underline-offset-4", className)}
+  rel={ external ? "noopener noreferrer" : undefined }
+  class={cn("inline-block text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-300 decoration-zinc-300 dark:decoration-zinc-700 hover:decoration-zinc-900 dark:hover:decoration-zinc-100 transition-colors duration-150 ease-in-out", underline && "underline underline-offset-4", className)}
   {...rest}>
   <slot/>
 </a>
+
