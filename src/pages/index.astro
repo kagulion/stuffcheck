@@ -14,23 +14,27 @@ const blog = (await getCollection('blog'))
 
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
-    <div class="animate mb-8">
+    <!-- <div class="animate mb-8">
       <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50 flex items-center gap-2">
         Привет <span class="text-2xl inline-block animate-bounce">👋🏻</span>
       </h1>
       <p class="mt-2 text-zinc-600 dark:text-zinc-400 text-base sm:text-lg">
         Блог о технологиях, архитектуре и AI-разработке.
       </p>
-    </div>
+    </div> -->
 
     <div class="space-y-12">
       <!-- Последние посты в блоге -->
       <section class="animate space-y-5">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h2 class="text-lg font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
-            Последние записи
-          </h2>
-          <Link href="/blog" class="text-sm font-medium"> Смотреть все &rarr; </Link>
+          <h1
+            class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50"
+          >
+            Блог
+          </h1>
+          <Link href="/blog" class="text-sm font-medium">
+            Смотреть все &rarr;
+          </Link>
         </div>
         <ul class="flex flex-col gap-3.5">
           {
