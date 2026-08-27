@@ -6,11 +6,11 @@ Built with Astro, Tailwind and Typescript, an no frameworks.
 
 It was designed as an even more minimal theme than my popular theme [Astro Sphere](https://github.com/markhorn-dev/astro-sphere)
 
-## 🚀 Deploy your own
+# 🚀 Deploy your own
 
 [![Deploy with Vercel](_deploy_vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/markhorn-dev/astro-nano)  [![Deploy with Netlify](_deploy_netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markhorn-dev/astro-nano)
 
-## 📋 Features
+# 📋 Features
 
 - ✅ 100/100 Lighthouse performance
 - ✅ Responsive
@@ -26,20 +26,20 @@ It was designed as an even more minimal theme than my popular theme [Astro Spher
 - ✅ Markdown support
 - ✅ MDX Support (components in your markdown)
 
-## 💯 Lighthouse score
+# 💯 Lighthouse score
 ![Astro Nano Lighthouse Score](_lighthouse.png)
 
-## 🕊️ Lightweight
+# 🕊️ Lightweight
 No frameworks or added bulk
 
-## ⚡︎ Fast
+# ⚡︎ Fast
 Rendered in ~40ms on localhost
 
-## 📄 Configuration
+# 📄 Configuration
 
 The blog posts on the demo serve as the documentation and configuration.
 
-## 💻 Commands
+# 💻 Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -59,6 +59,6 @@ Replace npm with your package manager of choice. `npm`, `pnpm`, `yarn`, `bun`, e
 | `npm run lint`            | Run ESLint                                       |
 | `npm run lint:fix`        | Auto-fix ESLint issues                           |
 
-## 🏛️ License
+# 🏛️ License
 
 MIT

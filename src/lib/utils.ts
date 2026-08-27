@@ -9,15 +9,15 @@ export function formatDate(date: Date) {
   return Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "2-digit",
-    year: "numeric"
+    year: "numeric",
   }).format(date);
 }
 
 export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).length;
-  const readingTimeMinutes = ((wordCount / 200) + 1).toFixed();
-  return `${readingTimeMinutes} min read`;
+  const readingTimeMinutes = (wordCount / 200 + 1).toFixed();
+  return `${readingTimeMinutes} минут(ы) читать`;
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string): string {
