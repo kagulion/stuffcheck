@@ -293,7 +293,7 @@ article mark {
 
 /* Images */
 article img {
-  @apply mx-auto my-6 rounded-lg border border-zinc-200/60 dark:border-zinc-800/60;
+  @apply mx-auto my-6 rounded-lg;
   max-width: 100%;
   height: auto;
 }
