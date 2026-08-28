@@ -32,11 +32,34 @@ const { Content } = await post.render();
       class="mb-8 space-y-3 border-b border-zinc-100 pb-8 dark:border-zinc-800/60"
     >
       <div
-        class="animate flex items-center gap-2 text-xs font-normal text-zinc-400 dark:text-zinc-500"
+        class="animate flex flex-wrap items-center gap-2 text-xs font-normal text-zinc-400 dark:text-zinc-500"
       >
         <FormattedDate date={post.data.date} />
         <span>·</span>
         <span>{readingTime(post.body)}</span>
+        {
+          post.data.author && (
+            <>
+              <span>·</span>
+              <span>{post.data.author}</span>
+            </>
+          )
+        }
+        {
+          post.data.source && (
+            <>
+              <span>·</span>
+              <a
+                href={post.data.source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline underline-offset-2 transition-colors hover:text-zinc-700 dark:hover:text-zinc-300"
+              >
+                {post.data.source.name}
+              </a>
+            </>
+          )
+        }
       </div>
       <h1
         class="animate font-serif text-4xl font-semibold leading-snug tracking-[-0.015em] text-zinc-900 dark:text-zinc-100 sm:text-5xl"
