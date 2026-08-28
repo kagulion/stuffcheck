@@ -15,7 +15,6 @@
 
 ```text
 ├── public/
-│   ├── favicon-*.svg       # Иконки сайта
 │   └── user-files/         # Файлы для скачивания в статьях
 ├── src/
 │   ├── components/         # UI-компоненты (Header, Footer, ArrowCard, BackToPrev и др.)
@@ -67,10 +66,14 @@ pnpm lint:fix        # Авто-исправление ошибок линтер
 
 Чтобы опубликовать новую статью, создайте папку с файлом `index.md` в директории `src/content/blog/`:
 
-```markdowntitle: 'Название статьи'
+```markdown
+---
+title: 'Название статьи'
 description: 'Краткое описание публикации для превью и метатегов'
 date: 'Aug 27 2026'
 draft: false
+---
+
 Текст вашей статьи в формате Markdown...
 ```
 
